@@ -68,7 +68,6 @@ class Duel:
     def run(self):
     
         if not self.silent_mode: 
-            print("___!!!  D U E L   B E G I N S   !!!___")
             self.displayStats()
             
         while self.player1.isAlive() and self.player2.isAlive():
@@ -91,11 +90,12 @@ if __name__ == "__main__":
         "draws": 0,
     }
     
-    for _ in range(1000):
+    for _ in range(10):
         player1.hp = 10
         player2.hp = 10
         duel = Duel(player1, player2)
-        duel.silent_mode = True
+        print("_" * 50)
+        duel.silent_mode = False
         duel.run()
         if player1.isAlive():
             record[1] += 1
